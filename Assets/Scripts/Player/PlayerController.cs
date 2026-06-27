@@ -19,11 +19,15 @@ public class PlayerController : Singleton<PlayerController>
     public GameObject startScreen;
     public bool invencible = false;
 
+    [Header("animation")]
+    public AnimatorManager animatorManager;
+
     //Private
     private bool _canRun;
     private Vector3 _pos;
     private Vector3 _startPosition;
     private float _currentSpeed;
+    private float _baseSpeedToAnimation = 5;
 
     private void Start()
     {
@@ -50,8 +54,17 @@ public class PlayerController : Singleton<PlayerController>
     {
         if(collision.transform.tag == tagCheckEnemy)
         {
-           if(!invencible) EndGame();
+            if (!invencible)
+            {
+                MoveBack(collision.transform);
+                EndGame(AnimatorManager.AnimationType.DEATH);
+            }
         }
+    }
+
+    private void MoveBack(Transform t)
+    {
+        t.DOMoveZ(1f, 0f).SetRelative();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -62,9 +75,10 @@ public class PlayerController : Singleton<PlayerController>
         }
     }
 
-    private void EndGame()
+    private void EndGame(AnimatorManager.AnimationType animationType = AnimatorManager.AnimationType.IDLE)
     {
         _canRun = false;
+        animatorManager.Play(animationType);
         endScreen.SetActive(true);
     }
 
@@ -72,6 +86,7 @@ public class PlayerController : Singleton<PlayerController>
     {
         _canRun = true;
         startScreen.SetActive(false);
+        animatorManager.Play(AnimatorManager.AnimationType.RUN, _currentSpeed / _baseSpeedToAnimation);
     }
 
     #region POWER UPS
