@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ItemCollactableCoin : ItemCollactableBase
 {
-    public Collider collider;
+    public new Collider collider;
     public bool collect = false;
     public float lerp = 5f;
     public float minDistance = 1f;

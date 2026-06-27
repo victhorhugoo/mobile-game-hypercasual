@@ -19,6 +19,9 @@ public class PlayerController : Singleton<PlayerController>
     public GameObject startScreen;
     public bool invencible = false;
 
+    [Header("Coin Setup")]
+    public GameObject coinCollector;
+
     [Header("animation")]
     public AnimatorManager animatorManager;
 
@@ -127,9 +130,6 @@ public class PlayerController : Singleton<PlayerController>
 
         transform.DOMoveY(_startPosition.y, .1f);
     }
-
-    [Header("Coin Setup")]
-    public GameObject coinCollector;
 
     public void ChangeCoinCollectorSize(float amount)
     {
