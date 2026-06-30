@@ -488,6 +488,7 @@ GameObject:
   - component: {fileID: 876617473}
   - component: {fileID: 876617479}
   - component: {fileID: 876617480}
+  - component: {fileID: 876617481}
   m_Layer: 0
   m_Name: PlayerContainer
   m_TagString: Player
@@ -646,6 +647,22 @@ MonoBehaviour:
   invencible: 0
   coinCollector: {fileID: 989655116}
   animatorManager: {fileID: 1118175371}
+  _bounceHelper: {fileID: 876617481}
+--- !u!114 &876617481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 876617472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6ae572dc4cf34745afa672f67ec74a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ScaleDuration: 0.05
+  ScaleBounce: 1.2
+  ease: 1
 --- !u!1001 &913899638
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -838,6 +855,55 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &982103195
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 982103197}
+  - component: {fileID: 982103196}
+  m_Layer: 0
+  m_Name: CoinsAnimationManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &982103196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 982103195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6176d97ccd43ef74f9e15b4a5959a6dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itens:
+  - {fileID: 0}
+  ScaleDuration: 0.1
+  ScaleTimeBetweenPieces: 0.03
+  ease: 27
+--- !u!4 &982103197
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 982103195}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &988529014
 GameObject:
   m_ObjectHideFlags: 0
@@ -1167,6 +1233,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2a2ca87697e33ae4d8f5fef36502d0ec, type: 2}
   timeBetweenPieces: 0.3
   _index: 0
+  ScaleDuration: 0.2
+  ScaleTimeBetweenPieces: 0.1
+  ease: 27
 --- !u!4 &1780847932
 Transform:
   m_ObjectHideFlags: 0
@@ -2300,3 +2369,4 @@ SceneRoots:
   - {fileID: 1780847932}
   - {fileID: 988529016}
   - {fileID: 1016737628}
+  - {fileID: 982103197}
