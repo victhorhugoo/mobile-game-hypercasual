@@ -18,8 +18,11 @@ MonoBehaviour:
   levelPieces:
   - {fileID: 3825849454758400431, guid: b6a023d245faeea46a041824daf75965, type: 3}
   - {fileID: 978368765638977402, guid: 547178beec86a5c45802bf5cfc46e063, type: 3}
+  - {fileID: 3825849454758400431, guid: d8d8d78600de12e448fb9789b4c67510, type: 3}
+  - {fileID: 3825849454758400431, guid: c4f38aec4362a7a47b95934e088eef96, type: 3}
+  - {fileID: 3825849454758400431, guid: f22366f38cf0e8241a464bdb88db8089, type: 3}
   levelPiecesEnd:
   - {fileID: 3825849454758400431, guid: 2c215a3a40a3400459eed7669dc48764, type: 3}
-  pieceStartNumber: 3
-  pieceNumber: 5
+  pieceStartNumber: 1
+  pieceNumber: 9
   pieceEndNumber: 1
