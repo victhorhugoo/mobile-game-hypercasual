@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using DG.Tweening;
 using Ebac.core.Singleton;
+using utils.bouncehelper;
 
 public class PlayerController : Singleton<PlayerController>
 {

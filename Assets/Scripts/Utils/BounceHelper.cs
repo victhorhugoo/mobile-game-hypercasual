@@ -2,25 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
-using DG.Tweening;
-
-public class BounceHelper : MonoBehaviour
+namespace utils.bouncehelper
 {
-    [Header("Animation")]
-    public float ScaleDuration = .05f;
-    public float ScaleBounce = 1.2f;
-    public Ease ease = Ease.OutBack;
+    public class BounceHelper : MonoBehaviour
 
-    private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.E))
+        [Header("Animation")]
+        public float ScaleDuration = .05f;
+        public float ScaleBounce = 1.2f;
+        public Ease ease = Ease.OutBack;
+
+        private void Update()
         {
-            Bounce();
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                Bounce();
+            }
         }
+
+        public void Bounce()
+        {
+            transform.DOScale(ScaleBounce, ScaleDuration).SetEase(ease).SetLoops(2, LoopType.Yoyo);
+        }
+
     }
 
-    public void Bounce()
-    {
-        transform.DOScale(ScaleBounce, ScaleDuration).SetEase(ease).SetLoops(2, LoopType.Yoyo);
-    }
 }
+
