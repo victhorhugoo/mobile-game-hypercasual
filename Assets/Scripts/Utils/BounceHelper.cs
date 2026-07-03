@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
-namespace utils.bouncehelper
+namespace Utils.BounceHelper
 {
     public class BounceHelper : MonoBehaviour
 

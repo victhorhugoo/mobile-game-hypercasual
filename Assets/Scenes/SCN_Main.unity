@@ -1222,7 +1222,7 @@ MonoBehaviour:
   animatorManager: {fileID: 1118175371}
   limit: 4
   limitVector: {x: -5.4, y: 4}
-  _bounceHelper: {fileID: 876617481}
+  _bounceHelper: {fileID: 0}
 --- !u!114 &876617481
 MonoBehaviour:
   m_ObjectHideFlags: 0
