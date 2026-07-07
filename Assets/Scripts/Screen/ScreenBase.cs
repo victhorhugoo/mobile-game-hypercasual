@@ -18,6 +18,7 @@ namespace Screens
         public ScreenType screenType;
 
         public List<Transform> listOfObjects;
+        public List<Typper> listOfPhrases;
 
         public bool startHided = false;
 
@@ -54,7 +55,15 @@ namespace Screens
                 var obj = listOfObjects[i];
                 obj.gameObject.SetActive(true);
                 obj.DOScale(0, animationDuration).From().SetDelay(i * delayBetweenObjects);
+            }
+            Invoke(nameof(StartType), listOfObjects.Count * delayBetweenObjects);
+        }
 
+        private void StartType()
+        {
+            for (int i = 0; i < listOfPhrases.Count; i++)
+            {
+                listOfPhrases[i].StartType();
             }
         }
 
@@ -62,6 +71,7 @@ namespace Screens
         {
             listOfObjects.ForEach(i => i.gameObject.SetActive(false));
         }
+
         private void ForceShowObjects()
         {
             listOfObjects.ForEach(i => i.gameObject.SetActive(true));
