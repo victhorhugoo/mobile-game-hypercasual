@@ -33,6 +33,7 @@ namespace Screens
             _currentScreen = nextScreen;
             
         }
+        
         public void HideAll()
         {
             foreach (var screen in screenBase)
