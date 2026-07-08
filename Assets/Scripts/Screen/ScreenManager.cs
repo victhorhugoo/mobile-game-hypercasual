@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Ebac.core.Singleton;
 using JetBrains.Annotations;
+using DG.Tweening;
 
 namespace Screens
 {
@@ -16,6 +17,8 @@ namespace Screens
 
         private void Start()
         {
+            //transform.Scale(2);
+            //screenBase.GetRandom();
             HideAll();
             ShowByType(startScreen);
         }
